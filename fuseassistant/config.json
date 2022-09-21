@@ -1,0 +1,61 @@
+{
+   "name":"fuseassistant",
+   "version":"0.3.157",
+   "slug":"fuseassistant",
+   "description":"Zigbee2Mqtt Assistant - GUI for fuseassistant",
+   "url":"https://github.com/malek2777/fuseassistant",
+   "startup":"application",
+   "webui":"http://[HOST]:[PORT:80]/",
+   "arch":[
+      "amd64",
+      "armv7"
+   ],
+   "map": [
+    "config:rw"
+  ],
+   "boot":"auto",
+   "options":{
+      "settings":{
+         "mqttserver":"addon_core_mosquitto",
+         "mqttport": "",
+         "mqttusername":"",
+         "mqttpassword":"",
+         "mqttsecure": false,
+         "basetopic": "fuseassistant",
+         "homeassistantdiscoverybasetopic": "homeassistant",
+         "lowbatterythreshold": 30,
+         "allowjointimeout": 20,
+         "autosetlastseen": false,
+         "devicespollingschedule": "*/12 * * * *",
+         "networkscanschedule": "0 */3 * * *"
+      }
+   },
+   "schema": {
+    "settings": {
+      "mqttserver": "str",
+      "mqttport": "int(0,65535)?",
+      "mqttusername": "str",
+      "mqttpassword": "str",
+      "mqttsecure": "bool?",
+      "basetopic": "str?",
+      "homeassistantdiscoverybasetopic": "str?",
+      "lowbatterythreshold": "int(0,100)?",
+      "allowjointimeout": "int(0,)?",
+      "autosetlastseen": "bool?",
+      "devicespollingschedule": "str?",
+      "networkscanschedule": "str?"
+     }
+   },
+   "ports":{
+      "80/tcp":null
+   },
+   "ports_description":{
+      "80/tcp":"GUI http access (not required for HASS.IO ingress)"
+   },
+   "image":"malek2777fuseassistant",
+   "ingress":true,
+   "ingress_port":80,
+   "panel_icon":"mdi:zigbee",
+   "panel_title":"Fuse",
+   "panel_admin":true
+}
