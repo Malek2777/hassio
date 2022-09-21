@@ -2,7 +2,7 @@
    "name":"fuseassistant",
    "version":"0.3.157",
    "slug":"fuseassistant",
-   "description":"Zigbee2Mqtt Assistant - GUI for fuseassistant",
+   "description":"Fuse Assistant - GUI for fuseassistant",
    "url":"https://github.com/malek2777/fuseassistant",
    "startup":"application",
    "webui":"http://[HOST]:[PORT:80]/",
@@ -52,7 +52,7 @@
    "ports_description":{
       "80/tcp":"GUI http access (not required for HASS.IO ingress)"
    },
-   "image":"malek2777fuseassistant",
+   "image":"malek2777/fuseassistant",
    "ingress":true,
    "ingress_port":80,
    "panel_icon":"mdi:zigbee",
